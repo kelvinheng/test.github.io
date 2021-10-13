@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <head>
-    <title>Testing - Download App</title>
+    <title>Testing - Home Page</title>
     <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -50,24 +50,22 @@
   }
   const INDON_DOMAIN_FLAG = checkIndonDomain();
 
-  const DOMAIN = 'judikingh5api.xyz'
+  const DOMAIN = 'kelvinheng.github.io/test.github.io'
   // App name setting
-  const APP_NAME_MSIA = "judikingMsia";
-  const APP_NAME_INDO = "judikingIndon";
+  const APP_NAME_MSIA = "Netflix";
+  const APP_NAME_INDO = "Netflix";
   const APP_NAME = INDON_DOMAIN_FLAG ? APP_NAME_INDO : APP_NAME_MSIA;
-  const APK_NAME = `${APP_NAME.charAt(0).toUpperCase()}${APP_NAME.slice(1)}_release.apk`;
+  const APK_NAME = `${APP_NAME.charAt(0).toUpperCase()}${APP_NAME.slice(1)}.xapk`;
   const ANDROID_PACKAGE_NAME = `com.${APP_NAME}`;
   const IOS_URL_SCHEME = `${APP_NAME}://`;
- // const IOS_URL_DOWNLOAD_MSIA = 'https://ww.ddddky.com/j0t3A.html';
-  const IOS_URL_DOWNLOAD_MSIA = 'https://www.google.com';
-  //const IOS_URL_DOWNLOAD_INDO = 'https://ww.ddddky.com/4qTcP.html';
-  //const IOS_URL_DOWNLOAD = INDON_DOMAIN_FLAG ? IOS_URL_DOWNLOAD_INDO : IOS_URL_DOWNLOAD_MSIA;
-  const IOS_URL_DOWNLOAD = IOS_URL_DOWNLOAD_MSIA;
-  const ANDROID_URL_DOWNLOAD = 'https://www.google.com';
-  const ANDROID_INTENT = 'https://www.google.com';
+  const IOS_URL_DOWNLOAD_MSIA = 'https://kelvinheng.github.io/test.github.io/download.html';
+  const IOS_URL_DOWNLOAD_INDO = 'https://kelvinheng.github.io/test.github.io/download.html';
+  const IOS_URL_DOWNLOAD = INDON_DOMAIN_FLAG ? IOS_URL_DOWNLOAD_INDO : IOS_URL_DOWNLOAD_MSIA;
+  const ANDROID_URL_DOWNLOAD = `https://${DOMAIN}/${APK_NAME}`;
+  const ANDROID_URL_DOWNLOAD = `https://${DOMAIN}/${APK_NAME}`;
 
   function openApp(){
-     /* let os = getMobileOperatingSystem();
+      let os = getMobileOperatingSystem();
       if(os === 'iOS'){
           setTimeout(function () { window.location = IOS_URL_DOWNLOAD; }, 25);
           window.location = IOS_URL_SCHEME
@@ -78,7 +76,7 @@
               appWindow.location = ANDROID_URL_DOWNLOAD;
                   }
           },1000);
-      }*/
+      }
   }
   function getMobileOperatingSystem() {
       let userAgent = navigator.userAgent || navigator.vendor || window.opera;
