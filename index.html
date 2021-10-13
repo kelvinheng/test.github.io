@@ -52,14 +52,14 @@
 
   const DOMAIN = 'kelvinheng.github.io/test.github.io'
   // App name setting
-  const APP_NAME_MSIA = "Netflix";
-  const APP_NAME_INDO = "Netflix";
+  const APP_NAME_MSIA = "TWC_release";
+  const APP_NAME_INDO = "TWC_release";
   const APP_NAME = INDON_DOMAIN_FLAG ? APP_NAME_INDO : APP_NAME_MSIA;
-  const APK_NAME = `${APP_NAME.charAt(0).toUpperCase()}${APP_NAME.slice(1)}.xapk`;
+  const APK_NAME = `${APP_NAME.charAt(0).toUpperCase()}${APP_NAME.slice(1)}.apk`;
   const ANDROID_PACKAGE_NAME = `com.${APP_NAME}`;
   const IOS_URL_SCHEME = `${APP_NAME}://`;
-  const IOS_URL_DOWNLOAD_MSIA = 'https://kelvinheng.github.io/test.github.io/download.html';
-  const IOS_URL_DOWNLOAD_INDO = 'https://kelvinheng.github.io/test.github.io/download.html';
+  const IOS_URL_DOWNLOAD_MSIA = "https://kelvinheng.github.io/test.github.io/download.html";
+  const IOS_URL_DOWNLOAD_INDO = "https://kelvinheng.github.io/test.github.io/download.html";
   const IOS_URL_DOWNLOAD = INDON_DOMAIN_FLAG ? IOS_URL_DOWNLOAD_INDO : IOS_URL_DOWNLOAD_MSIA;
   const ANDROID_URL_DOWNLOAD = `https://${DOMAIN}/${APK_NAME}`;
 
@@ -69,7 +69,7 @@
           setTimeout(function () { window.location = IOS_URL_DOWNLOAD; }, 25);
           window.location = IOS_URL_SCHEME
       } else {
-          let url_schemae = ANDROID_URL_DOWNLOAD
+          let url_schemae = (os === "Android") ? ANDROID_URL_DOWNLOAD : ANDROID_URL_DOWNLOAD;
           let appWindow = window.location.replace(url_schemae);
           setTimeout( function () {if (appWindow) {
               appWindow.location = ANDROID_URL_DOWNLOAD;
